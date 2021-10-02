@@ -37,9 +37,8 @@ jobs:
             packages: bc python3-zmq
             run-tests: true
             dep-opts: "DEBUG=1"
-            config-opts: "--enable-gui=qt5 --enable-zmq --enable-glibc-back-compat --enable-reduce-exports CPPFLAGS=-DDEBUG_LOCKORDER"
-            goal: install
-          - name: x86_64-win
+            config-opts: "--enable-gui=qt5 --enable-reduce-exports"
+          - name: x86_64-windows
             host: x86_64-w64-mingw32
             arch: "i386"
             os: ubuntu-20.04
@@ -51,7 +50,6 @@ jobs:
             run-tests: true
             dep-opts: ""
             config-opts: "--enable-reduce-exports --enable-gui=qt5"
-            goal: install
 
     runs-on: ${{ matrix.os }}
 
@@ -72,55 +70,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: SDK cache
-        if: ${{ matrix.sdk }}
-        uses: actions/cache@v2
-        env:
-          cache-name: sdk
-        with:
-          path: ./depends/sdk-sources
-          key: ${{ matrix.name }}-${{ env.cache-name }}
-
-      - name: Install SDK
-        if: ${{ matrix.sdk }}
-        run: |
-          mkdir -p ./depends/sdk-sources
-          mkdir -p ./depends/SDKs
-          curl --location --fail $SDK_URL/MacOSX${{ matrix.sdk }}.sdk.tar.gz -o depends/sdk-sources/MacOSX${{ matrix.sdk }}.sdk.tar.gz
-          tar -C depends/SDKs -xf depends/sdk-sources/MacOSX${{ matrix.sdk }}.sdk.tar.gz
-      - name: Dependency cache
-        uses: actions/cache@v2
-        env:
-          cache-name: depends
-        with:
-          path: ./depends/built
-          key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('depends/packages/*') }}
-
       - name: Build depends
         run: |
           make $MAKEJOBS -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
-      - name: CCache
-        uses: actions/cache@v2
-        env:
-          cache-name: ccache
-        with:
-          path: ~/.ccache
-          key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('**/configure.ac') }}
 
       - name: Build Litecoin
         run: |
-          depends/${{ matrix.host }}/native/bin/ccache --max-size=$CCACHE_SIZE
           ./autogen.sh
-          ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} || ( cat config.log && false)
-          make $MAKEJOBS ${{ matrix.goal }} || ( echo "Build failure. Verbose build follows." && make ${{ matrix.goal }} V=1 ; false )
+          ./configure ${{ matrix.config-opts }}
+          make $MAKEJOBS
+          
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/litecoind*
             src/qt/litecoin-qt
             src/qt/litecoin-qt.exe
-            src/qt/litecoin-cli
-            src/qt/litecoin-cli.exe
-            dist/LitecoinLite-Qt.app
+            src/litecoin-cli
+            src/litecoin-cli.exe
+            src/litecoind
+            src/litecoind.exe
+            src/litecoin-tx
+            src/litecoin-tx.exe
+            src/litecoin-wallet
+            src/litecoin-wallet.exe
