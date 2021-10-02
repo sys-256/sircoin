@@ -15,7 +15,7 @@ jobs:
     name: ${{ matrix.name }}
 
     env:
-      MAKEJOBS: "-j($nproc)"
+      MAKEJOBS: "-j$(nproc)"
       CHECK_DOC: "0"
       CCACHE_SIZE: "100M"
       CCACHE_TEMPDIR: /tmp/.ccache-temp
