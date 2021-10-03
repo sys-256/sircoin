@@ -78,6 +78,7 @@ jobs:
           SIR_ROOT=$(pwd)
           BDB_PREFIX="${SIR_ROOT}/db4"
           sudo mkdir -p $BDB_PREFIX
+          sudo chmod 755 -R .
           cd db-4.8.30/build_unix/
           ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX ${{ matrix.bdb-args }}
           make $MAKEJOBS
