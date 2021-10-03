@@ -76,7 +76,7 @@ jobs:
       - name: Build Berkeley DB
         run: |
           SIR_ROOT=$(pwd)
-          BDB_PREFIX="${RAVEN_ROOT}/db4"
+          BDB_PREFIX="${SIR_ROOT}/db4"
           sudo mkdir -p $BDB_PREFIX
           cd db-4.8.30/build_unix/
           ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX ${{ matrix.bdb-args }}
