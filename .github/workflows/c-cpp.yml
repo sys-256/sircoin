@@ -36,7 +36,7 @@ jobs:
             os: ubuntu-20.04
             packages: bc python3-zmq
             dep-opts: "DEBUG=1"
-            config-opts: "--enable-gui=qt5 --enable-reduce-exports"
+            config-opts: "--enable-gui=qt5 --enable-reduce-exports LDFLAGS='-L${BDB_PREFIX}/lib/' CPPFLAGS='-I${BDB_PREFIX}/include/'"
             bdb-args: ""
           - name: x86_64-windows
             host: x86_64-w64-mingw32
