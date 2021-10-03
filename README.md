@@ -1,14 +1,11 @@
-Litecoin Core integration/staging tree
+Sircoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=master)](https://travis-ci.org/litecoin-project/litecoin)
 
-https://litecoin.org
-
-What is Litecoin?
+What is Sircoin?
 ----------------
 
-Litecoin is an experimental digital currency that enables instant payments to
+Sircoin is an experimental digital currency that enables instant payments to
 anyone, anywhere in the world. Litecoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Litecoin Core is the name of open source
