@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build depends
-        if: ${{ matrix.name }} == ${{ x86_64-windows }}
+        if: ${{ matrix.name }} == x86_64-windows
         run: make $MAKEJOBS -C depends HOST=${{ matrix.host }} DEBUG=1
 
       - name: Build Berkeley DB
