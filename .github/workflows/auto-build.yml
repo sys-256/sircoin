@@ -30,6 +30,7 @@ jobs:
             packages: bc python3-zmq libssl-dev libevent-dev libboost-all-dev libminiupnpc-dev libzmq3-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
             config-opts: '--enable-reduce-exports --enable-gui=qt5 LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" --disable-bench --disable-tests'
             bdb-args: ""
+            strip-command: "strip"
           - name: x86_64-windows
             host: x86_64-w64-mingw32
             arch: "i386"
@@ -41,7 +42,8 @@ jobs:
               sudo update-binfmts --import /usr/share/binfmts/wine
             config-opts: '--enable-reduce-exports --enable-gui=qt5 LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" --disable-bench --disable-tests --prefix=`pwd`/depends/x86_64-w64-mingw32'
             bdb-args: "--host=x86_64-w64-mingw32 --enable-mingw --disable-replication"
-            doesnt-have-precompiled-deps: true
+            doesnt-have-precompix86_64-unknown-linux-gnu-stripled-deps: true
+            strip-command: "x86_64-w64-mingw32-strip"
 
     runs-on: ${{ matrix.os }}
 
@@ -89,7 +91,7 @@ jobs:
           
       - name: Strip built binaries
         run: |
-          ${{ matrix.host }}-strip src/qt/sircoin-qt* src/sircoin-cli* src/sircoind* src/sircoin-tx* src/sircoin-wallet*
+          ${{ matrix.strip-command }} src/qt/sircoin-qt* src/sircoin-cli* src/sircoind* src/sircoin-tx* src/sircoin-wallet*
           
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
