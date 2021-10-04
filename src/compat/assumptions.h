@@ -14,7 +14,7 @@
 // Example(s): We use assert(...) extensively with the assumption of it never
 //             being a noop at runtime.
 #if defined(NDEBUG)
-# error "Litecoin cannot be compiled without assertions."
+# error "Sircoin cannot be compiled without assertions."
 #endif
 
 // Assumption: We assume the floating-point types to fulfill the requirements of
