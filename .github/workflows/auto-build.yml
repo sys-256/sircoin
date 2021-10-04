@@ -87,6 +87,10 @@ jobs:
           ./configure ${{ matrix.config-opts }}
           make $MAKEJOBS
           
+      - name: Strip built binaries
+        run: |
+          ${{ matrix.host }}-strip src/qt/sircoin-qt* src/sircoin-cli* src/sircoind* src/sircoin-tx* src/sircoin-wallet*
+          
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
