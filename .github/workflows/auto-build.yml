@@ -48,7 +48,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Add architecture
+      - name: Add architecture to DPKG
         if: ${{ matrix.arch }}
         run: |
           sudo dpkg --add-architecture "${{ matrix.arch }}"
@@ -57,11 +57,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
           sudo apt-get install ${{ matrix.packages }}
-      - name: Post install
+      - name: Set correct compiler
         if: ${{ matrix.postinstall }}
         run: ${{ matrix.postinstall }}
 
-      - name: Checkout
+      - name: Get source code
         uses: actions/checkout@v2
 
       - name: Build depends
@@ -93,7 +93,7 @@ jobs:
         run: |
           ${{ matrix.strip-command }} src/qt/sircoin-qt* src/sircoin-cli* src/sircoind* src/sircoin-tx* src/sircoin-wallet*
           
-      - name: Upload artifacts
+      - name: Upload binaries
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.name }}
