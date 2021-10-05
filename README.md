@@ -17,7 +17,7 @@ the Sircoin Core software, see [the releases page](https://github.com/sys-256/si
 License
 -------
 
-Sircoin Core is a fork of [Litecoin](https://github.com/litecoin-project/litecoin), and therefore is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Sircoin Core is a fork of [Litecoin Core](https://github.com/litecoin-project/litecoin), and therefore is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
