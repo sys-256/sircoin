@@ -44,6 +44,7 @@ jobs:
             bdb-args: "--host=x86_64-w64-mingw32 --enable-mingw --disable-replication"
             doesnt-have-precompiled-deps: true
             strip-command: "x86_64-w64-mingw32-strip"
+            binbows-weird: true
 
     runs-on: ${{ matrix.os }}
 
@@ -79,6 +80,11 @@ jobs:
           make $MAKEJOBS
           sudo make install
           cd ..
+          
+      - name: Update time thing if Windows
+        if: ${{ matrix.binbows-weird }}
+        run: |
+          sed -i 's/gmtime_r(&time_val, &ts);/gmtime_s(&ts, &time_val);/' `pwd`/src/util/time.cpp
       
       - name: Build Sircoin
         run: |
