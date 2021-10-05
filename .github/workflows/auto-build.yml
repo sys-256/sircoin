@@ -44,7 +44,6 @@ jobs:
             bdb-args: "--host=x86_64-w64-mingw32 --enable-mingw --disable-replication"
             doesnt-have-precompiled-deps: true
             strip-command: "x86_64-w64-mingw32-strip"
-            binbows-weird: true
 
     runs-on: ${{ matrix.os }}
 
