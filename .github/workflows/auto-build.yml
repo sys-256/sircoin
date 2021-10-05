@@ -80,11 +80,6 @@ jobs:
           make $MAKEJOBS
           sudo make install
           cd ..
-          
-      - name: Update time thing if Windows
-        if: ${{ matrix.binbows-weird }}
-        run: |
-          sed -i 's/gmtime_r(&time_val, &ts);/gmtime_s(&ts, &time_val);/g' `pwd`/src/util/time.cpp
       
       - name: Build Sircoin
         run: |
