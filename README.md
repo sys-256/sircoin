@@ -11,8 +11,7 @@ with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Sircoin Core is the name of open source
 software which enables the use of this currency.
 
-For more information, as well as an immediately useable, binary version of
-the Sircoin Core software, see [the releases page](https://github.com/sys-256/sircoin/releases).
+For a binary version of the Sircoin Core software, see [the releases page.](https://github.com/sys-256/sircoin/releases)
 
 License
 -------
