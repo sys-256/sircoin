@@ -555,8 +555,8 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/sircoin-project/sircoin>";
-    const std::string URL_WEBSITE = "<https://sircoin.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/sys-256/sircoin>";
+    const std::string URL_WEBSITE = "<https://sircoin.tk>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
