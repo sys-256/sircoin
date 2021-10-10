@@ -7143,7 +7143,7 @@ reload_cmds='$LD$reload_flag -o $output$reload_objs'
 case $host_os in
   darwin*)
     if test "$GCC" = yes; then
-      reload_cmds='$LTCC $LTCFLAGS -nostdlib ${wl}-r -o $output$reload_objs'
+      reload_cmds='$SIRC $SIRFLAGS -nostdlib ${wl}-r -o $output$reload_objs'
     else
       reload_cmds='$LD$reload_flag -o $output$reload_objs'
     fi
@@ -7827,10 +7827,10 @@ fi
 
 
 # If no C compiler was specified, use CC.
-LTCC=${LTCC-"$CC"}
+SIRC=${SIRC-"$CC"}
 
 # If no C compiler flags were specified, use CFLAGS.
-LTCFLAGS=${LTCFLAGS-"$CFLAGS"}
+SIRFLAGS=${SIRFLAGS-"$CFLAGS"}
 
 # Allow CC to be a program name with arguments.
 compiler=$CC
@@ -8780,9 +8780,9 @@ else
 	# link flags.
 	rm -rf libconftest.dylib*
 	echo "int foo(void){return 1;}" > conftest.c
-	echo "$LTCC $LTCFLAGS $LDFLAGS -o libconftest.dylib \
+	echo "$SIRC $SIRFLAGS $LDFLAGS -o libconftest.dylib \
 -dynamiclib -Wl,-single_module conftest.c" >&5
-	$LTCC $LTCFLAGS $LDFLAGS -o libconftest.dylib \
+	$SIRC $SIRFLAGS $LDFLAGS -o libconftest.dylib \
 	  -dynamiclib -Wl,-single_module conftest.c 2>conftest.err
         _lt_result=$?
 	if test -f libconftest.dylib && test ! -s conftest.err && test $_lt_result = 0; then
@@ -9803,8 +9803,8 @@ old_CFLAGS="$CFLAGS"
 
 # Set sane defaults for various variables
 test -z "$CC" && CC=cc
-test -z "$LTCC" && LTCC=$CC
-test -z "$LTCFLAGS" && LTCFLAGS=$CFLAGS
+test -z "$SIRC" && SIRC=$CC
+test -z "$SIRFLAGS" && SIRFLAGS=$CFLAGS
 test -z "$LD" && LD=ld
 test -z "$ac_objext" && ac_objext=o
 
@@ -9990,10 +9990,10 @@ lt_simple_link_test_code='int main(){return(0);}'
 
 
 # If no C compiler was specified, use CC.
-LTCC=${LTCC-"$CC"}
+SIRC=${SIRC-"$CC"}
 
 # If no C compiler flags were specified, use CFLAGS.
-LTCFLAGS=${LTCFLAGS-"$CFLAGS"}
+SIRFLAGS=${SIRFLAGS-"$CFLAGS"}
 
 # Allow CC to be a program name with arguments.
 compiler=$CC
@@ -13270,10 +13270,10 @@ if test "$_lt_caught_CXX_error" != yes; then
 
 
 # If no C compiler was specified, use CC.
-LTCC=${LTCC-"$CC"}
+SIRC=${SIRC-"$CC"}
 
 # If no C compiler flags were specified, use CFLAGS.
-LTCFLAGS=${LTCFLAGS-"$CFLAGS"}
+SIRFLAGS=${SIRFLAGS-"$CFLAGS"}
 
 # Allow CC to be a program name with arguments.
 compiler=$CC
@@ -22809,8 +22809,8 @@ predeps_CXX='`$ECHO "X$predeps_CXX" | $Xsed -e "$delay_single_quote_subst"`'
 postdeps_CXX='`$ECHO "X$postdeps_CXX" | $Xsed -e "$delay_single_quote_subst"`'
 compiler_lib_search_path_CXX='`$ECHO "X$compiler_lib_search_path_CXX" | $Xsed -e "$delay_single_quote_subst"`'
 
-LTCC='$LTCC'
-LTCFLAGS='$LTCFLAGS'
+SIRC='$SIRC'
+SIRFLAGS='$SIRFLAGS'
 compiler='$compiler_DEFAULT'
 
 # Quote evaled strings.
@@ -23679,10 +23679,10 @@ old_postinstall_cmds=$lt_old_postinstall_cmds
 old_postuninstall_cmds=$lt_old_postuninstall_cmds
 
 # A C compiler.
-LTCC=$lt_CC
+SIRC=$lt_CC
 
-# LTCC compiler flags.
-LTCFLAGS=$lt_CFLAGS
+# SIRC compiler flags.
+SIRFLAGS=$lt_CFLAGS
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe=$lt_lt_cv_sys_global_symbol_pipe

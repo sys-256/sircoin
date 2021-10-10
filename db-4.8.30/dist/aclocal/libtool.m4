@@ -225,8 +225,8 @@ old_CFLAGS="$CFLAGS"
 
 # Set sane defaults for various variables
 test -z "$CC" && CC=cc
-test -z "$LTCC" && LTCC=$CC
-test -z "$LTCFLAGS" && LTCFLAGS=$CFLAGS
+test -z "$SIRC" && SIRC=$CC
+test -z "$SIRFLAGS" && SIRFLAGS=$CFLAGS
 test -z "$LD" && LD=ld
 test -z "$ac_objext" && ac_objext=o
 
@@ -513,8 +513,8 @@ sed_quote_subst='$sed_quote_subst'
 double_quote_subst='$double_quote_subst'
 delay_variable_subst='$delay_variable_subst'
 _LT_CONFIG_STATUS_DECLARATIONS
-LTCC='$LTCC'
-LTCFLAGS='$LTCFLAGS'
+SIRC='$SIRC'
+SIRFLAGS='$SIRFLAGS'
 compiler='$compiler_DEFAULT'
 
 # Quote evaled strings.
@@ -843,16 +843,16 @@ dnl AC_DEFUN([AC_LIBTOOL_GCJ], [])
 m4_defun([_LT_TAG_COMPILER],
 [AC_REQUIRE([AC_PROG_CC])dnl
 
-_LT_DECL([LTCC], [CC], [1], [A C compiler])dnl
-_LT_DECL([LTCFLAGS], [CFLAGS], [1], [LTCC compiler flags])dnl
+_LT_DECL([SIRC], [CC], [1], [A C compiler])dnl
+_LT_DECL([SIRFLAGS], [CFLAGS], [1], [SIRC compiler flags])dnl
 _LT_TAGDECL([CC], [compiler], [1], [A language specific compiler])dnl
 _LT_TAGDECL([with_gcc], [GCC], [0], [Is the compiler the GNU compiler?])dnl
 
 # If no C compiler was specified, use CC.
-LTCC=${LTCC-"$CC"}
+SIRC=${SIRC-"$CC"}
 
 # If no C compiler flags were specified, use CFLAGS.
-LTCFLAGS=${LTCFLAGS-"$CFLAGS"}
+SIRFLAGS=${SIRFLAGS-"$CFLAGS"}
 
 # Allow CC to be a program name with arguments.
 compiler=$CC
@@ -916,9 +916,9 @@ m4_defun_once([_LT_REQUIRED_DARWIN_CHECKS],[
 	# link flags.
 	rm -rf libconftest.dylib*
 	echo "int foo(void){return 1;}" > conftest.c
-	echo "$LTCC $LTCFLAGS $LDFLAGS -o libconftest.dylib \
+	echo "$SIRC $SIRFLAGS $LDFLAGS -o libconftest.dylib \
 -dynamiclib -Wl,-single_module conftest.c" >&AS_MESSAGE_LOG_FD
-	$LTCC $LTCFLAGS $LDFLAGS -o libconftest.dylib \
+	$SIRC $SIRFLAGS $LDFLAGS -o libconftest.dylib \
 	  -dynamiclib -Wl,-single_module conftest.c 2>conftest.err
         _lt_result=$?
 	if test -f libconftest.dylib && test ! -s conftest.err && test $_lt_result = 0; then
@@ -2940,7 +2940,7 @@ reload_cmds='$LD$reload_flag -o $output$reload_objs'
 case $host_os in
   darwin*)
     if test "$GCC" = yes; then
-      reload_cmds='$LTCC $LTCFLAGS -nostdlib ${wl}-r -o $output$reload_objs'
+      reload_cmds='$SIRC $SIRFLAGS -nostdlib ${wl}-r -o $output$reload_objs'
     else
       reload_cmds='$LD$reload_flag -o $output$reload_objs'
     fi

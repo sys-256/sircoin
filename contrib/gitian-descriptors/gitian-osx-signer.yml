@@ -1,5 +1,5 @@
 ---
-name: "litecoin-dmg-signer"
+name: "sircoin-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/litecoin-project/litecoin-detached-sigs.git"
+- "url": "https://github.com/sircoin-project/sircoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "litecoin-osx-unsigned.tar.gz"
+- "sircoin-osx-unsigned.tar.gz"
 script: |
   set -e -o pipefail
 
@@ -29,8 +29,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=litecoin-osx-unsigned.tar.gz
-  SIGNED=litecoin-osx-signed.dmg
+  UNSIGNED=sircoin-osx-unsigned.tar.gz
+  SIGNED=sircoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

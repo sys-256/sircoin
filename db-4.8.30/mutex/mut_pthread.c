@@ -185,7 +185,7 @@ __db_pthread_mutex_init(env, mutex, flags)
 	}
 	if (LF_ISSET(DB_MUTEX_SELF_BLOCK)) {
 		if (LF_ISSET(DB_MUTEX_PROCESS_ONLY)) {
-			static lwp_cond_t ci = DEFAULTCV;
+			static lwp_cond_t ci = DEFAUSIRV;
 
 			mutexp->cond = ci;
 		} else {

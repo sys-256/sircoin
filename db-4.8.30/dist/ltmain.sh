@@ -62,8 +62,8 @@
 #
 #       host-triplet:	$host
 #       shell:		$SHELL
-#       compiler:		$LTCC
-#       compiler flags:		$LTCFLAGS
+#       compiler:		$SIRC
+#       compiler flags:		$SIRFLAGS
 #       linker:		$LD (gnu? $with_gnu_ld)
 #       $progname:		(GNU libtool) 2.2.6
 #       automake:		$automake_version
@@ -530,8 +530,8 @@ func_help ()
 	s*\$progname*'$progname'*
 	s*\$host*'"$host"'*
 	s*\$SHELL*'"$SHELL"'*
-	s*\$LTCC*'"$LTCC"'*
-	s*\$LTCFLAGS*'"$LTCFLAGS"'*
+	s*\$SIRC*'"$SIRC"'*
+	s*\$SIRFLAGS*'"$SIRFLAGS"'*
 	s*\$LD*'"$LD"'*
 	s/\$with_gnu_ld/'"$with_gnu_ld"'/
 	s/\$automake_version/'"`(automake --version) 2>/dev/null |$SED 1q`"'/
@@ -2497,7 +2497,7 @@ static const void *lt_preloaded_setup() {
 	  ;;
 	esac
 	symtab_cflags=
-	for arg in $LTCFLAGS; do
+	for arg in $SIRFLAGS; do
 	  case $arg in
 	  -pie | -fpie | -fPIE) ;;
 	  *) symtab_cflags="$symtab_cflags $arg" ;;
@@ -2505,7 +2505,7 @@ static const void *lt_preloaded_setup() {
 	done
 
 	# Now compile the dynamic symbol file.
-	func_show_eval '(cd $output_objdir && $LTCC$symtab_cflags -c$no_builtin_flag$pic_flag_for_symtable "$my_dlsyms")' 'exit $?'
+	func_show_eval '(cd $output_objdir && $SIRC$symtab_cflags -c$no_builtin_flag$pic_flag_for_symtable "$my_dlsyms")' 'exit $?'
 
 	# Clean up the generated files.
 	func_show_eval '$RM "$output_objdir/$my_dlsyms" "$nlist" "${nlist}S" "${nlist}T"'
@@ -6537,7 +6537,7 @@ func_mode_link ()
 	  int main() { return 0; }
 EOF
 	  $opt_dry_run || $RM conftest
-	  if $LTCC $LTCFLAGS -o conftest conftest.c $deplibs; then
+	  if $SIRC $SIRFLAGS -o conftest conftest.c $deplibs; then
 	    ldd_output=`ldd conftest`
 	    for i in $deplibs; do
 	      case $i in
@@ -6585,7 +6585,7 @@ EOF
 		func_stripname -l '' "$i"
 		name=$func_stripname_result
 		$opt_dry_run || $RM conftest
-		if $LTCC $LTCFLAGS -o conftest conftest.c $i; then
+		if $SIRC $SIRFLAGS -o conftest conftest.c $i; then
 		  ldd_output=`ldd conftest`
 		  if test "X$allow_libtool_libs_with_static_runtimes" = "Xyes" ; then
 		    case " $predeps $postdeps " in
@@ -7840,7 +7840,7 @@ EOF
 	    # compiling, it, like the target executable, must be
 	    # executed on the $host or under an emulation environment.
 	    $opt_dry_run || {
-	      $LTCC $LTCFLAGS -o $cwrapper $cwrappersource
+	      $SIRC $SIRFLAGS -o $cwrapper $cwrappersource
 	      $STRIP $cwrapper
 	    }
 
