@@ -19,9 +19,8 @@ To Build
 
 ```bash
 ./autogen.sh
-./configure
+./configure --enable-reduce-exports
 make
-make install # optional
 ```
 
 This will build sircoin-qt as well, if the dependencies are met.

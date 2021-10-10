@@ -41,19 +41,12 @@ export BDB_PREFIX="$PWD/db4"
 With wallet:
 ```shell
 ./autogen.sh
-./configure --with-gui=no \
-    BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" \
-    BDB_CFLAGS="-I${BDB_PREFIX}/include"
+./configure --with-gui=no BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+gmake # use -jX here for parallelism
 ```
 
 Without wallet:
 ```shell
 ./autogen.sh
 ./configure --with-gui=no --disable-wallet
-```
-
-followed by:
-
-```shell
 gmake # use -jX here for parallelism
-```

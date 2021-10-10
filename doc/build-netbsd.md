@@ -54,24 +54,13 @@ export BDB_PREFIX="$PWD/db4"
 With wallet:
 ```
 ./autogen.sh
-./configure --with-gui=no CPPFLAGS="-I/usr/pkg/include" \
-    LDFLAGS="-L/usr/pkg/lib" \
-    BOOST_CPPFLAGS="-I/usr/pkg/include" \
-    BOOST_LDFLAGS="-L/usr/pkg/lib" \
-    BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" \
-    BDB_CFLAGS="-I${BDB_PREFIX}/include"
+./configure --with-gui=no CPPFLAGS="-I/usr/pkg/include" LDFLAGS="-L/usr/pkg/lib" BOOST_CPPFLAGS="-I/usr/pkg/include" BOOST_LDFLAGS="-L/usr/pkg/lib" BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+gmake # use -jX here for parallelism
 ```
 
 Without wallet:
-```
-./autogen.sh
-./configure --with-gui=no --disable-wallet \
-    CPPFLAGS="-I/usr/pkg/include" \
-    LDFLAGS="-L/usr/pkg/lib" \
-    BOOST_CPPFLAGS="-I/usr/pkg/include" \
-    BOOST_LDFLAGS="-L/usr/pkg/lib"
-```
-
 ```shell
+./autogen.sh
+./configure --with-gui=no --disable-wallet CPPFLAGS="-I/usr/pkg/include" LDFLAGS="-L/usr/pkg/lib" BOOST_CPPFLAGS="-I/usr/pkg/include" BOOST_LDFLAGS="-L/usr/pkg/lib"
 gmake # use -jX here for parallelism
 ```
