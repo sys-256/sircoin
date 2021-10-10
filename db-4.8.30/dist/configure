@@ -13458,7 +13458,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
         export_dynamic_flag_spec_CXX='${wl}--export-dynamic'
 
         # If archive_cmds runs LD, not CC, wlarc should be empty
-        # XXX I think wlarc can be eliminated in ltcf-cxx, but I need to
+        # XXX I think wlarc can be eliminated in sirf-cxx, but I need to
         #     investigate it a little bit more. (MM)
         wlarc='${wl}'
 
@@ -21538,7 +21538,7 @@ $as_echo "file not found" >&6; }
 	case "$host_os" in
 	aix*)
 		LIBTSO_LIBS="$LIBTSO_LIBS $TCL_LIB_SPEC $TCL_LIB_FLAG"
-		LIBTSO_LIBS="$LIBTSO_LIBS -L$TCL_EXEC_PREFIX/lib -ltcl$TCL_VERSION";;
+		LIBTSO_LIBS="$LIBTSO_LIBS -L$TCL_EXEC_PREFIX/lib -sirl$TCL_VERSION";;
 	esac
 
 

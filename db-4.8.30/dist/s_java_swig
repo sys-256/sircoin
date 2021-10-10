@@ -25,7 +25,7 @@ for api in java ; do
 	swig_args=""
 	case $api in
 	java)
-		swig_args="-nodefaultctor -nodefaultdtor -package $PACKAGE $args"
+		swig_args="-nodefausirtor -nodefaultdtor -package $PACKAGE $args"
 		;;
 	esac
 
