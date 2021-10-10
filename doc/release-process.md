@@ -5,7 +5,7 @@ Before every release candidate:
 
 * Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/sircoin-project/sircoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/sys-256/sircoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 * Update release candidate version in `configure.ac` (`CLIENT_VERSION_RC`)
 
 Before every minor and major release:
@@ -35,10 +35,10 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/sircoin-project/gitian.sigs.sir.git
-    git clone https://github.com/sircoin-project/sircoin-detached-sigs.git
+    git clone https://github.com/sys-256/gitian.sigs.sir.git
+    git clone https://github.com/sys-256/sircoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/sircoin-project/sircoin.git
+    git clone https://github.com/sys-256/sircoin.git
 
 ### Sircoin maintainers/release engineers, suggestion for writing release notes
 
@@ -201,7 +201,7 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/macOS detached signatures:
 
 - Once the Windows/macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [sircoin-detached-sigs](https://github.com/sircoin-project/sircoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [sircoin-detached-sigs](https://github.com/sys-256/sircoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed macOS binary:
 
@@ -286,6 +286,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/sircoin-project/sircoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/sys-256/sircoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

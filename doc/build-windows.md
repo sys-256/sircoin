@@ -89,7 +89,7 @@ This means you cannot use a directory that is located directly on the host Windo
 
 Acquire the source in the usual way:
 
-    git clone https://github.com/sircoin-project/sircoin.git
+    git clone https://github.com/sys-256/sircoin.git
 
 Once the source code is ready the build steps are below:
 
@@ -97,8 +97,8 @@ Once the source code is ready the build steps are below:
     cd depends
     make HOST=x86_64-w64-mingw32
     cd ..
-    ./autogen.sh # not required when building from tarball
-    CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
+    ./autogen.sh
+    ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32 --enable-reduced-exports --enable-gui=qt5
     make
 
 ## Building for 32-bit Windows
@@ -117,7 +117,7 @@ This means you cannot use a directory that located directly on the host Windows 
 
 Acquire the source in the usual way:
 
-    git clone https://github.com/sircoin-project/sircoin.git
+    git clone https://github.com/sys-256/sircoin.git
 
 Then build using:
 

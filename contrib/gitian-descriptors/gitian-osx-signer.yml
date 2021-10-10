@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/sircoin-project/sircoin-detached-sigs.git"
+- "url": "https://github.com/sys-256/sircoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "sircoin-osx-unsigned.tar.gz"

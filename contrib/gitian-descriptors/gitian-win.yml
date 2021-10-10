@@ -1,5 +1,5 @@
 ---
-name: "sircoin-win-0.18"
+name: "sircoin-win-0.1"
 enable_cache: true
 suites:
 - "bionic"
@@ -23,7 +23,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/sircoin-project/sircoin.git"
+- "url": "https://github.com/sys-256/sircoin.git"
   "dir": "sircoin"
 files: []
 script: |

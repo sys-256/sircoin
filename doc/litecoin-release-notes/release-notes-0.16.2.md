@@ -7,7 +7,7 @@ as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/sircoin-project/sircoin/issues>
+  <https://github.com/sys-256/sircoin/issues>
 
 To receive security and update notifications, please subscribe to:
 

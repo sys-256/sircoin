@@ -17,7 +17,7 @@ pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.6)
 
-git clone https://github.com/sircoin-project/sircoin.git
+git clone https://github.com/sys-256/sircoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -81,7 +81,6 @@ To configure without wallet:
 Build and run the tests:
 ```bash
 gmake # use -jX here for parallelism
-gmake check
 ```
 
 Resource limits

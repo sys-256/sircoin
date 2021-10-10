@@ -43,7 +43,7 @@ Build Sircoin Core
 
 1. Clone the Sircoin Core source code:
 
-        git clone https://github.com/sircoin-project/sircoin
+        git clone https://github.com/sys-256/sircoin
         cd sircoin
 
 2.  Build Sircoin Core:
@@ -56,15 +56,11 @@ Build Sircoin Core
         ./configure
         make
 
-3.  It is recommended to build and run the unit tests:
-
-        make check
-
-4.  You can also create a .dmg that contains the .app bundle (optional):
+3.  You can also create a .dmg that contains the .app bundle (optional):
 
         make deploy
 
-5.  Installation into user directories (optional):
+4.  Installation into user directories (optional):
 
         make install
 

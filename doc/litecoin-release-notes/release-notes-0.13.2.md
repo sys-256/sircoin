@@ -7,7 +7,7 @@ It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sircoin-project/sircoin/issues>
+  <https://github.com/sys-256/sircoin/issues>
 
 Compatibility
 ==============

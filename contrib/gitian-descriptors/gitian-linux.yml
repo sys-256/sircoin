@@ -1,5 +1,5 @@
 ---
-name: "sircoin-linux-0.18"
+name: "sircoin-linux-0.1"
 enable_cache: true
 suites:
 - "bionic"
@@ -32,7 +32,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/sircoin-project/sircoin.git"
+- "url": "https://github.com/sys-256/sircoin.git"
   "dir": "sircoin"
 files: []
 script: |

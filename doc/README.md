@@ -3,9 +3,9 @@ Sircoin Core
 
 Setup
 ---------------------
-Sircoin Core is the original Sircoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sircoin transactions, which requires approximately 22 gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Sircoin Core is the original Sircoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sircoin transactions, which requires approximately 1.1 gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Sircoin Core, visit [sircoin.org](https://sircoin.org/).
+To download Sircoin Core, visit [sircoin.org](https://github.com/sys-256/sircoin/releases).
 
 Running
 ---------------------
@@ -15,8 +15,8 @@ The following are some helpful notes on how to run Sircoin Core on your native p
 
 Unpack the files into a directory and run:
 
-- `bin/sircoin-qt` (GUI) or
-- `bin/sircoind` (headless)
+- `qt/sircoin-qt` (GUI) or
+- `sircoind` (headless)
 
 ### Windows
 
@@ -28,10 +28,7 @@ Drag Sircoin Core to your applications folder, and then run Sircoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Sircoin Wiki](https://sircoin.info/)
-for help and more information.
-* Ask for help on [#sircoin](http://webchat.freenode.net?channels=sircoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=sircoin).
-* Ask for help on the [SircoinTalk](https://sircointalk.io/) forums, in the [Technical Support section](https://sircointalk.io/c/technical-support).
+* Ask for help on our Discord server (see website at sircoin.tk).
 
 Building
 ---------------------
@@ -62,10 +59,6 @@ The Sircoin repo's [root README](/README.md) contains relevant information on th
 - [BIPS](bips.md)
 - [Dnsseed Policy](dnsseed-policy.md)
 - [Benchmarking](benchmarking.md)
-
-### Resources
-* Discuss on the [SircoinTalk](https://sircointalk.io/) forums.
-* Discuss general Sircoin development on #sircoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=sircoin-dev.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

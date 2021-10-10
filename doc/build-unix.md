@@ -244,7 +244,7 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
 
     pacman -S git base-devel boost libevent python
-    git clone https://github.com/sircoin-project/sircoin.git
+    git clone https://github.com/sys-256/sircoin.git
     cd sircoin/
     ./autogen.sh
     ./configure --disable-wallet --without-gui --without-miniupnpc
@@ -272,10 +272,10 @@ Then, install the toolchain and curl:
 To build executables for ARM:
 
     cd depends
-    make HOST=arm-linux-gnueabihf NO_QT=1
+    make HOST=arm-linux-gnueabihf
     cd ..
     ./autogen.sh
-    ./configure --prefix=$PWD/depends/arm-linux-gnueabihf --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++
+    ./configure --prefix=$PWD/depends/arm-linux-gnueabihf --enable-reduce-exports --enable-gui=qt5
     make
 
 

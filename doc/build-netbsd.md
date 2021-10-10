@@ -22,7 +22,7 @@ libtool
 pkg-config
 python37
 
-git clone https://github.com/sircoin-project/sircoin.git
+git clone https://github.com/sys-256/sircoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -72,8 +72,6 @@ Without wallet:
     BOOST_LDFLAGS="-L/usr/pkg/lib"
 ```
 
-Build and run the tests:
-```bash
+```shell
 gmake # use -jX here for parallelism
-gmake check
 ```
