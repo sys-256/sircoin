@@ -1,2 +1,1 @@
-# sircoin
-Sircoin Website - The ultimate shit site!
+definitely not made with bootstrap studio ahyes
